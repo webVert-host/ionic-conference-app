@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MapPage } from './map/map';
 import { TabsPage } from './tabs-page';
-import { MapPage } from '../map/map';
 
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: '..app/map',
+        path: 'map',
         children: [
           {
             path: '',
@@ -33,7 +33,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/app/map',
+        redirectTo: '/tab/map',
         pathMatch: 'full'
       }
     ]
