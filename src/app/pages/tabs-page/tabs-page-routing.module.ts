@@ -10,23 +10,14 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'map',
+        path: '..app/map',
         children: [
           {
             path: '',
             component: MapPage,
           },
           {
-            path: 'map/mapID',
-            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
-          }
-        ]
-      },
-      {
-        path: 'map',
-        children: [
-          {
-            path: '',
+            path: 'map',
             loadChildren: () => import('../map/map.module').then(m => m.MapModule)
           }
         ]
@@ -42,7 +33,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/app/tabs/map',
+        redirectTo: '/app/map',
         pathMatch: 'full'
       }
     ]
