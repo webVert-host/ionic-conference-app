@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
-import { SchedulePage } from '../schedule/schedule';
+import { MapPage } from '../map/map';
 
 
 const routes: Routes = [
@@ -10,15 +10,15 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: 'map',
         children: [
           {
             path: '',
-            component: SchedulePage,
+            component: MapPage,
           },
           {
-            path: 'session/:sessionId',
-            loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+            path: 'map/mapID',
+            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
           }
         ]
       },
